@@ -11,12 +11,19 @@ public class GeneralNPC : MonoBehaviour {
 		animator = GetComponent<Animator>();
 	}
 
-	void PlayDeathFX () {
+	void OnCollisionEnter2D(Collision2D coll) {
+		if (coll.gameObject.CompareTag("Player") || coll.gameObject.CompareTag("Sick")) {
+			Die();
+		}
+	}
+
+	//animator "Die" trigger will trigger this.
+	public void PlayDeathFX () {
 		Instantiate(deathFX, transform.position, Quaternion.identity);
+		Destroy(gameObject);
 	}
 
 	void Die () {
 		animator.SetTrigger("Die");
-		Destroy(gameObject, 10);
 	}
 }
