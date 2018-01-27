@@ -20,12 +20,12 @@ GameObject:
   m_Component:
   - component: {fileID: 4007832048512662}
   - component: {fileID: 212060213913173338}
-  - component: {fileID: 114310366045464444}
   - component: {fileID: 50440928174068954}
   - component: {fileID: 61954437656668252}
-  m_Layer: 0
-  m_Name: Player
-  m_TagString: Player
+  - component: {fileID: 114221445067611142}
+  m_Layer: 8
+  m_Name: Goober
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -37,8 +37,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1381554994377412}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0.29, y: -2.05, z: 0}
+  m_LocalScale: {x: 2.5536294, y: 0.753953, z: 2}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -62,7 +62,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 4
+  m_Constraints: 0
 --- !u!61 &61954437656668252
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -88,7 +88,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &114310366045464444
+--- !u!114 &114221445067611142
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -96,11 +96,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1381554994377412}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ba2093757b417d245b86e120721f9d6c, type: 3}
+  m_Script: {fileID: 11500000, guid: 3006e1b9f90655d4db2fd31dd8b684fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sneezeTimer: 0
-  Goober: {fileID: 1381554994377412, guid: b00f8c6b11d162940b769260af52a207, type: 2}
+  direction: {x: 0, y: 0}
 --- !u!212 &212060213913173338
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -134,7 +133,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 42d92aa7ef7bbe2409d75f42ec38e4c1, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.034482718, g: 1, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

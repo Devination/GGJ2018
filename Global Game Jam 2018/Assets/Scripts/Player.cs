@@ -7,14 +7,22 @@ public class Player : MonoBehaviour {
 	private const float SLOW_DURATION = 0.25f;
 	private float slowFirstTime;
 	private Vector2 headDirection;
-	Rigidbody2D body;
+	private float sneezeTime = 1;
+	private Rigidbody2D body;
+	public float sneezeTimer;
+	public GameObject Goober;
 
-	void Start () {
+	void Start() {
 		body = GetComponent<Rigidbody2D>();
 		headDirection = Vector2.down;
+		sneezeTimer = 0;
 	}
 
-	void FixedUpdate () {
+	void SetSneezeTime( float sneezeTime ) {
+		this.sneezeTime = sneezeTime;
+	}
+
+	void FixedUpdate() {
 		// Handle player movement
 		Vector2 input = new Vector2( Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical") );
 		Vector2 velocity = input * SPEED;
@@ -36,6 +44,14 @@ public class Player : MonoBehaviour {
 		}
 		else if( headInput == Vector2.zero ) {
 			headDirection = Vector2.down;
+		}
+
+		sneezeTimer += Time.deltaTime;
+		if ( sneezeTimer >= sneezeTime ) {
+			GameObject newGoob = Instantiate( Goober, body.transform.position, body.transform.rotation );
+			Goober goobScript = newGoob.GetComponent<Goober>();
+			goobScript.SetDirection( new Vector2( headDirection.x, headDirection.y ) );
+			sneezeTimer = 0;
 		}
 	}
 }
