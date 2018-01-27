@@ -5,7 +5,9 @@ using UnityEngine;
 public class Player : MonoBehaviour {
 	private const float SPEED = 5;
 	private const float SLOW_DURATION = 0.25f;
-	private float slowFirstTime;
+	private const float HEAD_DOWN_DURATION = 0.1f;
+	private float slowStartTime;
+	private float noInputStartTime;
 	private Vector2 headDirection;
 	private float sneezeTime = 1;
 	private Rigidbody2D body;
@@ -28,22 +30,26 @@ public class Player : MonoBehaviour {
 		Vector2 velocity = input * SPEED;
 		// Slow player movement if there is no input.
 		if( input.x == 0 && input.y == 0 && body.velocity != Vector2.zero ) {
-			slowFirstTime = slowFirstTime == -1 ? Time.time : slowFirstTime;
-			float slowElapsedTime = Time.time - slowFirstTime;
+			slowStartTime = slowStartTime == -1 ? Time.time : slowStartTime;
+			float slowElapsedTime = Time.time - slowStartTime;
 			body.velocity = Vector2.Lerp( body.velocity, Vector2.zero, slowElapsedTime / SLOW_DURATION );
 		}
 		else {
 			body.velocity = velocity;
-			slowFirstTime = -1;
+			slowStartTime = -1;
 		}
 
 		// Handle player head movement
 		Vector2 headInput = new Vector2( Input.GetAxisRaw( "HorizontalHead" ), Input.GetAxisRaw( "VerticalHead" ) );
 		if ( headInput.x == 0 ^ headInput.y == 0 ) {
 			headDirection = headInput;
+			noInputStartTime = -1;
 		}
 		else if( headInput == Vector2.zero ) {
-			headDirection = Vector2.down;
+			noInputStartTime = noInputStartTime == -1 ? Time.time : noInputStartTime;
+			if( HEAD_DOWN_DURATION >= Time.time - noInputStartTime ) {
+				headDirection = Vector2.down;
+			}
 		}
 
 		sneezeTimer += Time.deltaTime;
