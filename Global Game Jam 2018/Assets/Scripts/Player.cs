@@ -3,17 +3,20 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Player : MonoBehaviour {
-	private float SPEED = 5;
-	private float SLOW_DURATION = 0.25f;
+	private const float SPEED = 5;
+	private const float SLOW_DURATION = 0.25f;
 	private float slowFirstTime;
+	private Vector2 headDirection;
 	Rigidbody2D body;
 
 	void Start () {
 		body = GetComponent<Rigidbody2D>();
+		headDirection = Vector2.down;
 	}
 
 	void FixedUpdate () {
-		Vector2 input = new Vector2( Input.GetAxis("Horizontal"), Input.GetAxisRaw("Vertical") );
+		// Handle player movement
+		Vector2 input = new Vector2( Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical") );
 		Vector2 velocity = input * SPEED;
 		// Slow player movement if there is no input.
 		if( input.x == 0 && input.y == 0 && body.velocity != Vector2.zero ) {
@@ -24,6 +27,15 @@ public class Player : MonoBehaviour {
 		else {
 			body.velocity = velocity;
 			slowFirstTime = -1;
+		}
+
+		// Handle player head movement
+		Vector2 headInput = new Vector2( Input.GetAxisRaw( "HorizontalHead" ), Input.GetAxisRaw( "VerticalHead" ) );
+		if ( headInput.x == 0 ^ headInput.y == 0 ) {
+			headDirection = headInput;
+		}
+		else if( headInput == Vector2.zero ) {
+			headDirection = Vector2.down;
 		}
 	}
 }
