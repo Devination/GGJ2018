@@ -3,12 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(Animator))]
+[RequireComponent(typeof(Rigidbody2D))]
 public class GeneralNPC : MonoBehaviour {
-	Animator animator;
 	[SerializeField] GameObject deathFX;
+	Animator animator;
+	protected Rigidbody2D body;
 
-	void Start () {
+	protected virtual void Start () {
 		animator = GetComponent<Animator>();
+		body = GetComponent<Rigidbody2D>();
 	}
 
 	void OnCollisionEnter2D(Collision2D coll) {
