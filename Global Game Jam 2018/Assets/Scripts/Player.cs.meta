@@ -1,10 +1,11 @@
 fileFormatVersion: 2
 guid: ba2093757b417d245b86e120721f9d6c
-timeCreated: 1517039908
+timeCreated: 1517091251
 licenseType: Free
 MonoImporter:
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - Goober: {fileID: 1381554994377412, guid: b00f8c6b11d162940b769260af52a207, type: 2}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
