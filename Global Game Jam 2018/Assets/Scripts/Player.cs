@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Player : MonoBehaviour {
-	public float speed = 10;
+	private float SPEED = 5;
+	private float SLOW_DURATION = 0.25f;
+	private float slowFirstTime;
 	Rigidbody2D body;
 
 	void Start () {
@@ -11,8 +13,17 @@ public class Player : MonoBehaviour {
 	}
 
 	void FixedUpdate () {
-		Vector2 input = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
-		Vector2 velocity = input * speed;
-		body.velocity = velocity;
+		Vector2 input = new Vector2( Input.GetAxis("Horizontal"), Input.GetAxisRaw("Vertical") );
+		Vector2 velocity = input * SPEED;
+		// Slow player movement if there is no input.
+		if( input.x == 0 && input.y == 0 && body.velocity != Vector2.zero ) {
+			slowFirstTime = slowFirstTime == -1 ? Time.time : slowFirstTime;
+			float slowElapsedTime = Time.time - slowFirstTime;
+			body.velocity = Vector2.Lerp( body.velocity, Vector2.zero, slowElapsedTime / SLOW_DURATION );
+		}
+		else {
+			body.velocity = velocity;
+			slowFirstTime = -1;
+		}
 	}
 }
