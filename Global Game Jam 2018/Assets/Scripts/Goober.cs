@@ -26,6 +26,17 @@ public class Goober : MonoBehaviour {
 		body.velocity = direction * SPEED;
 	}
 
+	void OnCollisionEnter2D ( Collision2D collision ) {
+		if( collision.gameObject.CompareTag( "NPC" ) ) {
+			Splatter();
+		}
+	}
+
+	void Splatter() {
+		//TODO: gross animation
+		Destroy( gameObject );
+	}
+
 	void OnBecameInvisible () {
 		Destroy( gameObject );
 	}
