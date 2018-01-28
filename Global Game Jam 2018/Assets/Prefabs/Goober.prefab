@@ -21,9 +21,9 @@ GameObject:
   - component: {fileID: 4007832048512662}
   - component: {fileID: 212060213913173338}
   - component: {fileID: 50440928174068954}
-  - component: {fileID: 61954437656668252}
   - component: {fileID: 114221445067611142}
   - component: {fileID: 95540993884784236}
+  - component: {fileID: 58193990766461542}
   m_Layer: 8
   m_Name: Goober
   m_TagString: Sick
@@ -64,8 +64,8 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!61 &61954437656668252
-BoxCollider2D:
+--- !u!58 &58193990766461542
+CircleCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -77,18 +77,8 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 3.17, y: 2.45}
-    newSize: {x: 0.04, y: 0.04}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
-  m_EdgeRadius: 0
+  m_Radius: 0.3
 --- !u!95 &95540993884784236
 Animator:
   serializedVersion: 3
