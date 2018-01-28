@@ -10,8 +10,10 @@ public class GeneralNPC : MonoBehaviour {
 	protected Rigidbody2D body;
 	protected Player player;
 	protected Spawner spawner;
+	AudioSource audioSource;
 
 	protected virtual void Start () {
+		audioSource = GetComponent<AudioSource>();
 		animator = GetComponent<Animator>();
 		body = GetComponent<Rigidbody2D>();
 		player = FindObjectOfType<Player>();
@@ -27,6 +29,12 @@ public class GeneralNPC : MonoBehaviour {
 	//animator "Die" trigger will trigger this.
 	public void PlayDeathFX () {
 		Instantiate( deathFX, transform.position, Quaternion.identity );
+		int deathNum = Random.Range( 0, spawner.deathClips.Length - 1 );
+		GameObject soundObject = new GameObject();
+		Instantiate( soundObject );
+		AudioSource newSource = soundObject.AddComponent<AudioSource>();
+		newSource.clip = spawner.deathClips[deathNum];
+		newSource.Play();
 		Destroy( gameObject );
 	}
 

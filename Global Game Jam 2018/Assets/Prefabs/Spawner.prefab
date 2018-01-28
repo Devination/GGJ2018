@@ -56,4 +56,13 @@ MonoBehaviour:
   - {fileID: 1527924470590604, guid: d59f7d1edeb24ef45835d4a58d4e60aa, type: 2}
   - {fileID: 1527924470590604, guid: 026d9b1f93f6a60468af918ea5cb2a4f, type: 2}
   range: {x: 7, y: 3}
-  followerCount: 0
+  deathClips:
+  - {fileID: 8300000, guid: 6c19b5e637af515458136009817a1030, type: 3}
+  - {fileID: 8300000, guid: eb68b0d9b3f675f46b9370ad92edabc3, type: 3}
+  - {fileID: 8300000, guid: 68de18b8c29d8cb4da7217925c85b568, type: 3}
+  - {fileID: 8300000, guid: 0a8096c0e4938cc43a70c2b7e7fa7ce2, type: 3}
+  - {fileID: 8300000, guid: 95611fec38f86664484567ffbb52dd2f, type: 3}
+  - {fileID: 8300000, guid: fae650da682e20442af1bad6108d58e3, type: 3}
+  - {fileID: 8300000, guid: 77a33fb41f8e1fe4b8c2a2729e9bb308, type: 3}
+  - {fileID: 8300000, guid: a31a26666c40e2243bcdc982de267114, type: 3}
+  followCount: 0

@@ -5,6 +5,7 @@ using UnityEngine;
 public class Spawner : MonoBehaviour {
 	[SerializeField] GameObject[] npcPrefabs; 
 	[SerializeField] Vector2 range;
+	public AudioClip[] deathClips;
 	enum NPC {
 		Follow,
 		General,

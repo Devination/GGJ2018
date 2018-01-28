@@ -56,6 +56,13 @@ public class Player : MonoBehaviour {
 		Instantiate( deathFX, transform.position, Quaternion.identity );
 		EndBacker.SetActive( true );
 		ScoreBacker.SetActive( false );
+		Spawner spawner = FindObjectOfType<Spawner>();
+		int deathNum = Random.Range( 0, spawner.deathClips.Length - 1 );
+		GameObject soundObject = new GameObject();
+		Instantiate( soundObject );
+		AudioSource newSource = soundObject.AddComponent<AudioSource>();
+		newSource.clip = spawner.deathClips[deathNum];
+		newSource.Play();
 		Destroy( gameObject );
 	}
 
