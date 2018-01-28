@@ -4,7 +4,7 @@ using UnityEngine;
 
 [RequireComponent( typeof( Animator ) )]
 public class Player : MonoBehaviour {
-	const float SPEED = 5;
+	const float SPEED = 3.5f;
 	const float SLOW_DURATION = 0.25f;
 	const float HEAD_DOWN_DURATION = 0.1f;
 	const float TOTAL_EMPATHY = 6;
@@ -62,6 +62,26 @@ public class Player : MonoBehaviour {
 		goobScript.SetVelocity( body.velocity, new Vector2( headDirection.x, headDirection.y ) );
 	}
 
+	void HandleHeadAnimation ( string triggerPrefix ) {
+		string animationTrigger;
+		if( headDirection == Vector2.left ) {
+			animationTrigger = triggerPrefix + "_Left";
+		}
+		else if( headDirection == Vector2.right ) {
+			animationTrigger = triggerPrefix + "_Right";
+		}
+		else if( headDirection == Vector2.down ) {
+			animationTrigger = triggerPrefix + "_Front";
+		}
+		else {
+			animationTrigger = triggerPrefix + "_Back";
+		}
+
+		if( !animator.GetCurrentAnimatorStateInfo( 0 ).IsName( animationTrigger ) ) {
+			animator.SetTrigger( animationTrigger );
+		}
+	}
+
 	void FixedUpdate() {
 		// Handle player movement
 		Vector2 input = new Vector2( Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical") );
@@ -76,6 +96,8 @@ public class Player : MonoBehaviour {
 			body.velocity = velocity;
 			slowStartTime = -1;
 		}
+
+		bool isIdle = body.velocity == Vector2.zero;
 
 		// Handle player head movement
 		Vector2 headInput = new Vector2( Input.GetAxisRaw( "HorizontalHead" ), Input.GetAxisRaw( "VerticalHead" ) );
@@ -92,6 +114,13 @@ public class Player : MonoBehaviour {
 			if( HEAD_DOWN_DURATION >= Time.time - noInputStartTime ) {
 				headDirection = Vector2.down;
 			}
+		}
+
+		if( isIdle ) {
+			HandleHeadAnimation( "Idle" );
+		}
+		else {
+			HandleHeadAnimation( "Walk" );
 		}
 
 		sneezeTimer += Time.deltaTime;
