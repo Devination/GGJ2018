@@ -5,8 +5,18 @@ using UnityEngine;
 public class FollowNPC : GeneralNPC {
 	[SerializeField] float speed = 2;
 
-	void FixedUpdate () {
-		Vector2 dirToPlayer = player.transform.position - transform.position;
-		body.velocity = dirToPlayer.normalized * speed;
+	protected override void Start() {
+		base.Start();
+		InvokeRepeating( "DirectTowardsPlayer", 1.5f, 0.5f );
+	}
+
+	void DirectTowardsPlayer () {
+		if( player != null ) {
+			Vector2 dirToPlayer = player.transform.position - transform.position;
+			body.velocity = dirToPlayer.normalized * speed;
+		}
+		else {
+			body.velocity = Vector2.zero;
+		}
 	}
 }

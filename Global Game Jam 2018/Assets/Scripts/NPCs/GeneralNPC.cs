@@ -6,7 +6,7 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody2D))]
 public class GeneralNPC : MonoBehaviour {
 	[SerializeField] GameObject deathFX;
-	Animator animator;
+	protected Animator animator;
 	protected Rigidbody2D body;
 	protected Player player;
 

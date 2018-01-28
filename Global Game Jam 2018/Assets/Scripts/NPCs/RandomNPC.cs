@@ -16,6 +16,7 @@ public class RandomNPC : GeneralNPC {
 	}
 
 	IEnumerator Movement() {
+		yield return new WaitForSeconds( delayTime );
 		while (true) {
 			yield return new WaitForSeconds(delayTime);
 			Vector2 direction = GetOpenDirection();
