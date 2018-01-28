@@ -18,7 +18,7 @@ public class TitleScene : MonoBehaviour {
 
 	void Update () {
 		timer += Time.deltaTime;
-		if (timer > 8 && Input.anyKeyDown) {
+		if (timer > 6 && Input.anyKeyDown) {
 			Application.LoadLevel( 1 );
 		}
 	}
