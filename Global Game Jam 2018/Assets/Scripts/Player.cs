@@ -19,7 +19,7 @@ public class Player : MonoBehaviour {
 	float empathy;
 	Animator animator;
 	bool dying;
-	AudioSource audio;
+	AudioSource audioSource;
 	[SerializeField]
 	AudioClip[] blehClips;
 	public GameObject Goober;
@@ -29,7 +29,7 @@ public class Player : MonoBehaviour {
 	void Start() {
 		animator = GetComponent<Animator>();
 		body = GetComponent<Rigidbody2D>();
-		audio = GetComponent<AudioSource>();
+		audioSource = GetComponent<AudioSource>();
 		headDirection = Vector2.down;
 		sneezeTimer = 0;
 		empathy = TOTAL_EMPATHY;
@@ -65,8 +65,8 @@ public class Player : MonoBehaviour {
 		Goober goobScript = newGoob.GetComponent<Goober>();
 		goobScript.SetVelocity( body.velocity, new Vector2( headDirection.x, headDirection.y ) );
 		int blehNum = Random.Range( 0, blehClips.Length - 1 );
-		audio.clip = blehClips[blehNum];
-		audio.Play();
+		audioSource.clip = blehClips[blehNum];
+		audioSource.Play();
 	}
 
 	void HandleHeadAnimation ( string triggerPrefix ) {
