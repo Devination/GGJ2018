@@ -25,6 +25,8 @@ public class Player : MonoBehaviour {
 	public GameObject Goober;
 	private Rigidbody2D body;
 	public float sneezeTimer;
+	public GameObject EndBacker;
+	public GameObject ScoreBacker;
 
 	void Start() {
 		animator = GetComponent<Animator>();
@@ -52,6 +54,8 @@ public class Player : MonoBehaviour {
 	//animator "Die" trigger will trigger this.
 	public void PlayDeathFX () {
 		Instantiate( deathFX, transform.position, Quaternion.identity );
+		EndBacker.SetActive( true );
+		ScoreBacker.SetActive( false );
 		Destroy( gameObject );
 	}
 

@@ -2,14 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Music : MonoBehaviour {
+public class Flow : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		AudioSource source = GetComponent<AudioSource>();
-		source.Play();
 	}
-	
+
+	public void Restart () {
+		Application.LoadLevel( 1 );
+	}
+
 	// Update is called once per frame
 	void Update () {
 		
