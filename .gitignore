@@ -3,3 +3,4 @@ Global Game Jam 2018/Library/
 *.csproj
 *.sln
 *.suo
+*dc_test*
