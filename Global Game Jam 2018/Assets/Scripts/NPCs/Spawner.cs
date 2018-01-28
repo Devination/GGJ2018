@@ -11,13 +11,15 @@ public class Spawner : MonoBehaviour {
 		Random
 	};
 	public int followCount;
-	int FORCE_FOLLOWER_CAP = 2;
+	int FORCE_FOLLOWER_CAP = 3;
 	int rollsSinceLastFollower;
+	int spawnedEnemies;
 
 	void Start () {
 		// HACK: This should probably be procedural;
-		followCount = 1;
+		followCount = 0;
 		StartCoroutine( SpawnLoop() );
+		spawnedEnemies = 0;
 	}
 	
 	IEnumerator SpawnLoop() {
@@ -34,6 +36,13 @@ public class Spawner : MonoBehaviour {
 	void Spawn() {
 		Vector2 position = new Vector2( Random.Range( -range.x, range.x ), Random.Range( -range.y, range.y ) );
 		int NPCIndex = Random.Range( 0, npcPrefabs.Length );
+		if( spawnedEnemies == 0 ) {
+			NPCIndex = ( int )NPC.General;
+		}
+		else if( spawnedEnemies == 1 ) {
+			NPCIndex = ( int )NPC.Random;
+		}
+
 		if( NPCIndex == (int)NPC.Follow ) {
 			++followCount;
 			rollsSinceLastFollower = 0;
@@ -48,5 +57,6 @@ public class Spawner : MonoBehaviour {
 		}
 		GameObject npc = npcPrefabs[NPCIndex];
 		Instantiate( npc, position, Quaternion.identity );
+		spawnedEnemies++;
 	}
 }
