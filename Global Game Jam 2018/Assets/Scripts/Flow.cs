@@ -10,6 +10,7 @@ public class Flow : MonoBehaviour {
 
 	public void Restart () {
 		Application.LoadLevel( 1 );
+		Score.score = 0;
 	}
 
 	// Update is called once per frame
