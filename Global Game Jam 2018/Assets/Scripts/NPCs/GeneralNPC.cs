@@ -8,7 +8,7 @@ public class GeneralNPC : MonoBehaviour {
 	[SerializeField] GameObject deathFX;
 	Animator animator;
 	protected Rigidbody2D body;
-	private Player player;
+	protected Player player;
 
 	protected virtual void Start () {
 		animator = GetComponent<Animator>();
