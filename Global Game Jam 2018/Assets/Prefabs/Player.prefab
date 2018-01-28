@@ -55,6 +55,7 @@ GameObject:
   - component: {fileID: 50440928174068954}
   - component: {fileID: 61954437656668252}
   - component: {fileID: 95128459826259402}
+  - component: {fileID: 114323901084009516}
   m_Layer: 10
   m_Name: Player
   m_TagString: Player
@@ -268,6 +269,18 @@ MonoBehaviour:
   deathFX: {fileID: 1535464943376244, guid: 4c467564739bcf949b8b32f299affd05, type: 2}
   Goober: {fileID: 1381554994377412, guid: b00f8c6b11d162940b769260af52a207, type: 2}
   sneezeTimer: 0
+--- !u!114 &114323901084009516
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1381554994377412}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfc36354fb6a1af499e188f925587202, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 114310366045464444}
 --- !u!212 &212333385834140386
 SpriteRenderer:
   m_ObjectHideFlags: 1
