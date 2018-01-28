@@ -14,14 +14,31 @@ public class RandomNPC : GeneralNPC {
 		StartCoroutine(Movement());
 	}
 
-	//TODO: Check if you're 
 	IEnumerator Movement() {
 		while (true) {
 			yield return new WaitForSeconds(delayTime);
-			Vector2 direction = directions[Random.Range(0, directions.Length)];
+			Vector2 direction = GetOpenDirection();
 			body.AddForce(direction * speed, ForceMode2D.Impulse);
 			yield return new WaitForSeconds(moveTime);
 			body.velocity = Vector2.zero;
 		}
+	}
+
+	Vector2 GetOpenDirection() {
+		Vector2 position = transform.position;
+		Vector2 direction;
+		bool isBlocked = false;
+		do {
+			isBlocked = false;
+			direction = directions[Random.Range(0, directions.Length)];
+			//Debug.DrawLine(position, position + direction);
+			foreach (RaycastHit2D hit in Physics2D.LinecastAll(position, position + direction)) {
+				if (hit.transform != this.transform) {
+					isBlocked = true;
+					break;
+				}
+			}
+		} while (isBlocked);
+		return direction;
 	}
 }
