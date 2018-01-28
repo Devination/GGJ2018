@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class RandomNPC : GeneralNPC {
-	[SerializeField] float speed = 5;
+	[SerializeField] float speed = 2;
 	[SerializeField] float moveTime = 1;
 	[SerializeField] float delayTime = 1;
 	[SerializeField] LayerMask npcMask;

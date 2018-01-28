@@ -296,7 +296,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   deathFX: {fileID: 1237216527948926, guid: 918b2fceb7547cd49aa142f5b267fe8d, type: 2}
-  speed: 5
+  speed: 2
   moveTime: 1
   delayTime: 1
   npcMask:
