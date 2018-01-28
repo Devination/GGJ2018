@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 50440928174068954}
   - component: {fileID: 61954437656668252}
   - component: {fileID: 95128459826259402}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -117,6 +117,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba2093757b417d245b86e120721f9d6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  deathFX: {fileID: 0}
   Goober: {fileID: 1381554994377412, guid: b00f8c6b11d162940b769260af52a207, type: 2}
   sneezeTimer: 0
 --- !u!212 &212060213913173338

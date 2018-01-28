@@ -31,9 +31,7 @@ public class Goober : MonoBehaviour {
 	}
 
 	void OnCollisionEnter2D ( Collision2D collision ) {
-		if( collision.gameObject.CompareTag( "NPC" ) ) {
-			Splatter();
-		}
+		Splatter();
 	}
 
 	//animator "Splatter" trigger will trigger this.
