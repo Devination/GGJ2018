@@ -9,11 +9,13 @@ public class GeneralNPC : MonoBehaviour {
 	protected Animator animator;
 	protected Rigidbody2D body;
 	protected Player player;
+	protected Spawner spawner;
 
 	protected virtual void Start () {
 		animator = GetComponent<Animator>();
 		body = GetComponent<Rigidbody2D>();
 		player = FindObjectOfType<Player>();
+		spawner = FindObjectOfType<Spawner>();
 	}
 
 	void OnCollisionEnter2D(Collision2D coll) {
@@ -28,7 +30,7 @@ public class GeneralNPC : MonoBehaviour {
 		Destroy( gameObject );
 	}
 
-	void Die () {
+	virtual protected void Die () {
 		animator.SetTrigger("Die");
 		player.GetABitSadder();
 	}

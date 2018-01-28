@@ -19,4 +19,9 @@ public class FollowNPC : GeneralNPC {
 			body.velocity = Vector2.zero;
 		}
 	}
+
+	protected override void Die () {
+		spawner.DecreaseFollowCount();
+		base.Die();
+	}
 }
