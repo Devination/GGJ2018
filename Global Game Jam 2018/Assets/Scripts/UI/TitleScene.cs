@@ -3,35 +3,19 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class TitleScene : MonoBehaviour {
-	GameObject Doctor;
-	GameObject Despicable;
-	GameObject Mansion;
-	GameObject Maladies;
-	float animationStart;
-	// Use this for initialization
+	GameObject[] texts;
+
 	void Start () {
-		Doctor = transform.Find( "Doctor" ).gameObject;
-		Despicable = transform.Find( "Despicable" ).gameObject;
-		Mansion = transform.Find( "Mansion" ).gameObject;
-		Maladies = transform.Find( "Maladies" ).gameObject;
-		animationStart = Time.time;
+		texts = new GameObject[] {
+			transform.Find( "Doctor" ).gameObject,
+			transform.Find( "Despicable" ).gameObject,
+			transform.Find( "Mansion" ).gameObject,
+			transform.Find( "Maladies" ).gameObject
+		};
 	}
 
-	void ExecuteAnimation () {
-		Doctor.GetComponent<Animation>().Play( "FadeInText" );
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		float animationProgress = Time.time - animationStart;
-		if( animationProgress <= 1) {
-			Doctor.GetComponent<Animation>().Play( "FadeInText" );
-		} else if ( animationProgress > 1 && animationProgress <= 2 ) {
-			Despicable.GetComponent<Animation>().Play( "FadeInText" );
-		} else if( animationProgress > 2 && animationProgress <= 3 ) {
-			Mansion.GetComponent<Animation>().Play( "FadeInText" );
-		} else if( animationProgress > 3 && animationProgress <= 4 ) {
-			Maladies.GetComponent<Animation>().Play( "FadeInText" );
-		}
+	//This is triggered from events within the TitleScreen animation
+	public void EnableText( int step ) {
+		texts[step].SetActive( true );
 	}
 }
