@@ -6,6 +6,7 @@ public class RandomNPC : GeneralNPC {
 	[SerializeField] float speed = 5;
 	[SerializeField] float moveTime = 1;
 	[SerializeField] float delayTime = 1;
+	[SerializeField] LayerMask npcMask;
 
 	Vector2[] directions = new Vector2[] {Vector2.up , Vector2.down, Vector2.left, Vector2.right};
 
@@ -26,19 +27,8 @@ public class RandomNPC : GeneralNPC {
 
 	Vector2 GetOpenDirection() {
 		Vector2 position = transform.position;
-		Vector2 direction;
-		bool isBlocked = false;
-		do {
-			isBlocked = false;
-			direction = directions[Random.Range(0, directions.Length)];
-			//Debug.DrawLine(position, position + direction);
-			foreach (RaycastHit2D hit in Physics2D.LinecastAll(position, position + direction)) {
-				if (hit.transform != this.transform) {
-					isBlocked = true;
-					break;
-				}
-			}
-		} while (isBlocked);
+		Vector2 direction = directions[Random.Range(0, directions.Length)];
+		bool isBlocked = Physics2D.Linecast(position, position + direction, npcMask);
 		return direction;
 	}
 }
