@@ -7,7 +7,7 @@ public class Player : MonoBehaviour {
 	const float SPEED = 3.5f;
 	const float SLOW_DURATION = 0.25f;
 	const float HEAD_DOWN_DURATION = 0.1f;
-	const float TOTAL_EMPATHY = 1;
+	const float TOTAL_EMPATHY = 6;
 	const float EMPATHY_STEP = 1;
 	[SerializeField]
 	GameObject deathFX;
