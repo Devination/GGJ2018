@@ -7,7 +7,7 @@ public class Player : MonoBehaviour {
 	const float SPEED = 3.5f;
 	const float SLOW_DURATION = 0.25f;
 	const float HEAD_DOWN_DURATION = 0.1f;
-	const float TOTAL_EMPATHY = 6;
+	const float TOTAL_EMPATHY = 1;
 	const float EMPATHY_STEP = 1;
 	[SerializeField]
 	GameObject deathFX;
@@ -25,6 +25,8 @@ public class Player : MonoBehaviour {
 	public GameObject Goober;
 	private Rigidbody2D body;
 	public float sneezeTimer;
+	public GameObject EndBacker;
+	public GameObject ScoreBacker;
 
 	void Start() {
 		animator = GetComponent<Animator>();
@@ -52,6 +54,8 @@ public class Player : MonoBehaviour {
 	//animator "Die" trigger will trigger this.
 	public void PlayDeathFX () {
 		Instantiate( deathFX, transform.position, Quaternion.identity );
+		EndBacker.SetActive( true );
+		ScoreBacker.SetActive( false );
 		Destroy( gameObject );
 	}
 
