@@ -14,7 +14,7 @@ public class Player : MonoBehaviour {
 	float slowStartTime;
 	float noInputStartTime;
 	Vector2 headDirection;
-	float sneezeTime = 1;
+	float sneezeTime = 3;
 	GameObject HealthBar;
 	float empathy;
 	Animator animator;
@@ -56,6 +56,12 @@ public class Player : MonoBehaviour {
 		animator.SetTrigger( "Die" );
 	}
 
+	void Sneeze() {
+		GameObject newGoob = Instantiate( Goober, body.transform.position, body.transform.rotation );
+		Goober goobScript = newGoob.GetComponent<Goober>();
+		goobScript.SetVelocity( body.velocity, new Vector2( headDirection.x, headDirection.y ) );
+	}
+
 	void FixedUpdate() {
 		// Handle player movement
 		Vector2 input = new Vector2( Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical") );
@@ -90,9 +96,7 @@ public class Player : MonoBehaviour {
 
 		sneezeTimer += Time.deltaTime;
 		if ( ( sneezeTimer >= sneezeTime ) && !dying ) {
-			GameObject newGoob = Instantiate( Goober, body.transform.position, body.transform.rotation );
-			Goober goobScript = newGoob.GetComponent<Goober>();
-			goobScript.SetVelocity( body.velocity, new Vector2( headDirection.x, headDirection.y ) );
+			animator.SetTrigger( "Snoz" );
 			sneezeTimer = 0;
 		}
 	}
