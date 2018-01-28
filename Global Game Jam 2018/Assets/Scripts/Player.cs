@@ -45,6 +45,10 @@ public class Player : MonoBehaviour {
 			headDirection = headInput;
 			noInputStartTime = -1;
 		}
+		else if( headInput.x != 0 && headInput.y != 0 ) {
+			headDirection.x = 0;
+			headDirection.y = headInput.y;
+		}
 		else if( headInput == Vector2.zero ) {
 			noInputStartTime = noInputStartTime == -1 ? Time.time : noInputStartTime;
 			if( HEAD_DOWN_DURATION >= Time.time - noInputStartTime ) {
@@ -56,7 +60,7 @@ public class Player : MonoBehaviour {
 		if ( sneezeTimer >= sneezeTime ) {
 			GameObject newGoob = Instantiate( Goober, body.transform.position, body.transform.rotation );
 			Goober goobScript = newGoob.GetComponent<Goober>();
-			goobScript.SetDirection( new Vector2( headDirection.x, headDirection.y ) );
+			goobScript.SetVelocity( body.velocity, new Vector2( headDirection.x, headDirection.y ) );
 			sneezeTimer = 0;
 		}
 	}

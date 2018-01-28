@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Goober : MonoBehaviour {
 	private static float SPEED = 8;
+	private static float DAMP_SCALAR = 0.3f;
 	private Rigidbody2D body;
 	public Vector2 direction;
 
@@ -21,9 +22,8 @@ public class Goober : MonoBehaviour {
 		
 	}
 
-	public void SetDirection( Vector2 direction ) {
-		this.direction = direction;
-		body.velocity = direction * SPEED;
+	public void SetVelocity( Vector2 playerVelocity, Vector2 directionalForce ) {
+		body.velocity = ( playerVelocity * DAMP_SCALAR ) + ( directionalForce * SPEED );
 	}
 
 	void OnCollisionEnter2D ( Collision2D collision ) {
