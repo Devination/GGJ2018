@@ -71,6 +71,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 224910259216892922}
+  - component: {fileID: 114941383396407936}
   m_Layer: 5
   m_Name: HealthBar
   m_TagString: Untagged
@@ -88,7 +89,6 @@ GameObject:
   - component: {fileID: 224975057970496268}
   - component: {fileID: 222282352781160364}
   - component: {fileID: 114550107214509094}
-  - component: {fileID: 114067557777981526}
   m_Layer: 5
   m_Name: Bar
   m_TagString: Untagged
@@ -96,17 +96,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &114067557777981526
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1712222605103810}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f2cf642ed1d8fb443a0607af23406678, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &114185407677045304
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -126,8 +115,8 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 10911, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 42d92aa7ef7bbe2409d75f42ec38e4c1, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -186,11 +175,11 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 10911, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 42d92aa7ef7bbe2409d75f42ec38e4c1, type: 3}
+  m_Type: 3
   m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
+  m_FillCenter: 0
+  m_FillMethod: 0
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
@@ -215,6 +204,17 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
+--- !u!114 &114941383396407936
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1692183411955168}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2cf642ed1d8fb443a0607af23406678, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114973143469398998
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -322,7 +322,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 75, y: 43}
+  m_AnchoredPosition: {x: 71, y: 43}
   m_SizeDelta: {x: 116, y: 23}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224910259216892922
