@@ -537,6 +537,11 @@ Prefab:
       propertyPath: m_FillAmount
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 82848415400588654, guid: 9d47856b0cdf28a4eb8ed0ecea150cd4,
+        type: 2}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 13e18b0153b74b94cb9dada7dd8132c8, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9d47856b0cdf28a4eb8ed0ecea150cd4, type: 2}
   m_IsPrefabParent: 0
@@ -736,6 +741,36 @@ Prefab:
       propertyPath: m_Radius
       value: 0.1
       objectReference: {fileID: 0}
+    - target: {fileID: 114310366045464444, guid: dd57bb97bfd957e4286d88e7bdba62d4,
+        type: 2}
+      propertyPath: blehClips.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: ce596fc5350baa740a2b5c43af5f3b3a, type: 3}
+    - target: {fileID: 114310366045464444, guid: dd57bb97bfd957e4286d88e7bdba62d4,
+        type: 2}
+      propertyPath: blehClips.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: c67a94f6374328d46ba3fbeb77e10188, type: 3}
+    - target: {fileID: 114310366045464444, guid: dd57bb97bfd957e4286d88e7bdba62d4,
+        type: 2}
+      propertyPath: blehClips.Array.data[2]
+      value: 
+      objectReference: {fileID: 8300000, guid: d56bc3bb994abc14ebabacee7929a171, type: 3}
+    - target: {fileID: 114310366045464444, guid: dd57bb97bfd957e4286d88e7bdba62d4,
+        type: 2}
+      propertyPath: blehClips.Array.data[3]
+      value: 
+      objectReference: {fileID: 8300000, guid: dc50b2f713abe0c4f9f089fcc8c09871, type: 3}
+    - target: {fileID: 114310366045464444, guid: dd57bb97bfd957e4286d88e7bdba62d4,
+        type: 2}
+      propertyPath: blehClips.Array.data[4]
+      value: 
+      objectReference: {fileID: 8300000, guid: c12764ce09f5863469fc98937177fc91, type: 3}
+    - target: {fileID: 114310366045464444, guid: dd57bb97bfd957e4286d88e7bdba62d4,
+        type: 2}
+      propertyPath: blehClips.Array.data[5]
+      value: 
+      objectReference: {fileID: 8300000, guid: 5a1edb376d5b8b8458c0b2146110cd95, type: 3}
     m_RemovedComponents:
     - {fileID: 114323901084009516, guid: dd57bb97bfd957e4286d88e7bdba62d4, type: 2}
     - {fileID: 0}

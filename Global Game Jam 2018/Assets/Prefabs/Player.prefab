@@ -349,14 +349,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   deathFX: {fileID: 1535464943376244, guid: 4c467564739bcf949b8b32f299affd05, type: 2}
   blehClips:
-  - {fileID: 8300000, guid: 2e1b8c9fe5a304840922b2c2192eb4e2, type: 3}
-  - {fileID: 8300000, guid: 84b6cc73aa850fe49a7a08af06473997, type: 3}
-  - {fileID: 8300000, guid: 0c4207b5dfa05e74e9aa9422a000edd4, type: 3}
-  - {fileID: 8300000, guid: da4946246f037bf40a12dfc7be29137c, type: 3}
-  - {fileID: 8300000, guid: ff4b712660e5bfb478fc9d53cc456f8e, type: 3}
-  - {fileID: 8300000, guid: d90ee7705d879d748a05d5ccb0b8398f, type: 3}
+  - {fileID: 8300000, guid: ce596fc5350baa740a2b5c43af5f3b3a, type: 3}
+  - {fileID: 8300000, guid: c67a94f6374328d46ba3fbeb77e10188, type: 3}
+  - {fileID: 8300000, guid: d56bc3bb994abc14ebabacee7929a171, type: 3}
+  - {fileID: 8300000, guid: dc50b2f713abe0c4f9f089fcc8c09871, type: 3}
+  - {fileID: 8300000, guid: c12764ce09f5863469fc98937177fc91, type: 3}
+  - {fileID: 8300000, guid: 5a1edb376d5b8b8458c0b2146110cd95, type: 3}
   Goober: {fileID: 1381554994377412, guid: b00f8c6b11d162940b769260af52a207, type: 2}
   sneezeTimer: 0
+  EndBacker: {fileID: 0}
+  ScoreBacker: {fileID: 0}
 --- !u!114 &114323901084009516
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -368,7 +370,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cfc36354fb6a1af499e188f925587202, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 114310366045464444}
 --- !u!212 &212333385834140386
 SpriteRenderer:
   m_ObjectHideFlags: 1
