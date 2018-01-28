@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 114310366045464444}
   - component: {fileID: 50440928174068954}
   - component: {fileID: 61954437656668252}
+  - component: {fileID: 95128459826259402}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -88,6 +89,23 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!95 &95128459826259402
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1381554994377412}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 0d77ce804b216774085070b48093f2cd, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &114310366045464444
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -99,8 +117,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba2093757b417d245b86e120721f9d6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sneezeTimer: 0
   Goober: {fileID: 1381554994377412, guid: b00f8c6b11d162940b769260af52a207, type: 2}
+  sneezeTimer: 0
 --- !u!212 &212060213913173338
 SpriteRenderer:
   m_ObjectHideFlags: 1

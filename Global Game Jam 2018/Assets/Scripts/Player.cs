@@ -2,26 +2,58 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent( typeof( Animator ) )]
 public class Player : MonoBehaviour {
-	private const float SPEED = 5;
-	private const float SLOW_DURATION = 0.25f;
-	private const float HEAD_DOWN_DURATION = 0.1f;
-	private float slowStartTime;
-	private float noInputStartTime;
-	private Vector2 headDirection;
-	private float sneezeTime = 1;
+	const float SPEED = 5;
+	const float SLOW_DURATION = 0.25f;
+	const float HEAD_DOWN_DURATION = 0.1f;
+	const float TOTAL_EMPATHY = 6;
+	const float EMPATHY_STEP = 1;
+	[SerializeField]
+	GameObject deathFX;
+	float slowStartTime;
+	float noInputStartTime;
+	Vector2 headDirection;
+	float sneezeTime = 1;
+	GameObject HealthBar;
+	float empathy;
+	Animator animator;
+	bool dying;
+	public GameObject Goober;
 	private Rigidbody2D body;
 	public float sneezeTimer;
-	public GameObject Goober;
 
 	void Start() {
+		animator = GetComponent<Animator>();
 		body = GetComponent<Rigidbody2D>();
 		headDirection = Vector2.down;
 		sneezeTimer = 0;
+		empathy = TOTAL_EMPATHY;
+		HealthBar = GameObject.Find( "HealthBar" );
+		dying = false;
 	}
 
 	void SetSneezeTime( float sneezeTime ) {
 		this.sneezeTime = sneezeTime;
+	}
+
+	public void GetABitSadder() {
+		empathy -= EMPATHY_STEP;
+		HealthBar.GetComponent<ProgressBar>().Progress( empathy, TOTAL_EMPATHY );
+		if( empathy == 0 ) {
+			Die();
+		}
+	}
+
+	//animator "Die" trigger will trigger this.
+	public void PlayDeathFX () {
+		Instantiate( deathFX, transform.position, Quaternion.identity );
+		Destroy( gameObject );
+	}
+
+	void Die() {
+		dying = true;
+		animator.SetTrigger( "Die" );
 	}
 
 	void FixedUpdate() {
@@ -57,7 +89,7 @@ public class Player : MonoBehaviour {
 		}
 
 		sneezeTimer += Time.deltaTime;
-		if ( sneezeTimer >= sneezeTime ) {
+		if ( ( sneezeTimer >= sneezeTime ) && !dying ) {
 			GameObject newGoob = Instantiate( Goober, body.transform.position, body.transform.rotation );
 			Goober goobScript = newGoob.GetComponent<Goober>();
 			goobScript.SetVelocity( body.velocity, new Vector2( headDirection.x, headDirection.y ) );

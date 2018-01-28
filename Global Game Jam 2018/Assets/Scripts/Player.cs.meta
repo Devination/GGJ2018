@@ -1,10 +1,11 @@
 fileFormatVersion: 2
 guid: ba2093757b417d245b86e120721f9d6c
-timeCreated: 1517091251
+timeCreated: 1517108217
 licenseType: Free
 MonoImporter:
   serializedVersion: 2
   defaultReferences:
+  - deathFX: {fileID: 1535464943376244, guid: 4c467564739bcf949b8b32f299affd05, type: 2}
   - Goober: {fileID: 1381554994377412, guid: b00f8c6b11d162940b769260af52a207, type: 2}
   executionOrder: 0
   icon: {instanceID: 0}

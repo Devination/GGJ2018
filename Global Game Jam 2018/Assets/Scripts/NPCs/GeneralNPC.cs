@@ -8,10 +8,12 @@ public class GeneralNPC : MonoBehaviour {
 	[SerializeField] GameObject deathFX;
 	Animator animator;
 	protected Rigidbody2D body;
+	private Player player;
 
 	protected virtual void Start () {
 		animator = GetComponent<Animator>();
 		body = GetComponent<Rigidbody2D>();
+		player = FindObjectOfType<Player>();
 	}
 
 	void OnCollisionEnter2D(Collision2D coll) {
@@ -22,11 +24,12 @@ public class GeneralNPC : MonoBehaviour {
 
 	//animator "Die" trigger will trigger this.
 	public void PlayDeathFX () {
-		Instantiate(deathFX, transform.position, Quaternion.identity);
-		Destroy(gameObject);
+		Instantiate( deathFX, transform.position, Quaternion.identity );
+		Destroy( gameObject );
 	}
 
 	void Die () {
 		animator.SetTrigger("Die");
+		player.GetABitSadder();
 	}
 }
