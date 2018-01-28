@@ -1,10 +1,11 @@
 fileFormatVersion: 2
 guid: 3006e1b9f90655d4db2fd31dd8b684fc
-timeCreated: 1517084811
+timeCreated: 1517100057
 licenseType: Free
 MonoImporter:
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - splatFX: {fileID: 1535464943376244, guid: f88b806d81cbe2843a2bae69aa37b431, type: 2}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
