@@ -295,7 +295,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24f65a04671c1de45835ca4da944844c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  deathFX: {fileID: 1535464943376244, guid: 918b2fceb7547cd49aa142f5b267fe8d, type: 2}
+  deathFX: {fileID: 1237216527948926, guid: 918b2fceb7547cd49aa142f5b267fe8d, type: 2}
 --- !u!212 &212175939443769756
 SpriteRenderer:
   m_ObjectHideFlags: 1
