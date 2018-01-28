@@ -14,8 +14,10 @@ public class FollowNPC : GeneralNPC {
 		if( player != null ) {
 			Vector2 dirToPlayer = player.transform.position - transform.position;
 			body.velocity = dirToPlayer.normalized * speed;
+			animator.SetBool("Walking", true);
 		}
 		else {
+			animator.SetBool("Walking", false);
 			body.velocity = Vector2.zero;
 		}
 	}

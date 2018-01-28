@@ -19,9 +19,11 @@ public class RandomNPC : GeneralNPC {
 		yield return new WaitForSeconds( delayTime );
 		while (true) {
 			yield return new WaitForSeconds(delayTime);
+			animator.SetBool("Walking", true);
 			Vector2 direction = GetOpenDirection();
 			body.AddForce(direction * speed, ForceMode2D.Impulse);
 			yield return new WaitForSeconds(moveTime);
+			animator.SetBool("Walking", false);
 			body.velocity = Vector2.zero;
 		}
 	}
