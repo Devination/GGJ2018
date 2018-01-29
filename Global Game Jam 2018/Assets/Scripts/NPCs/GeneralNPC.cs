@@ -20,6 +20,8 @@ public class GeneralNPC : MonoBehaviour {
 
 	void OnCollisionEnter2D(Collision2D coll) {
 		if (coll.gameObject.CompareTag("Player") || coll.gameObject.CompareTag("Sick")) {
+			body.velocity = Vector2.zero;
+			body.isKinematic = true;
 			Die();
 		}
 	}
