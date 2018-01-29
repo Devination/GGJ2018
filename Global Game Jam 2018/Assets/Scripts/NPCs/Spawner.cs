@@ -55,6 +55,8 @@ public class Spawner : MonoBehaviour {
 		// Force a follower if we haven't rolled one in a while.
 		if( followCount == 0 && rollsSinceLastFollower >= FORCE_FOLLOWER_CAP ) {
 			NPCIndex = ( int )NPC.Follow;
+			++followCount;
+			rollsSinceLastFollower = 0;
 		}
 		GameObject npc = npcPrefabs[NPCIndex];
 		Instantiate( npc, position, Quaternion.identity );
