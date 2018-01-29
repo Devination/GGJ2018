@@ -9,7 +9,7 @@ public class Flow : MonoBehaviour {
 	}
 
 	public void Restart () {
-		Application.LoadLevel( 1 );
+		Application.LoadLevel( 2 );
 		Score.score = 0;
 	}
 
