@@ -13,6 +13,11 @@ public class Flow : MonoBehaviour {
 		Score.score = 0;
 	}
 
+	public void BackToMain () {
+		Application.LoadLevel( 0 );
+		Score.score = 0;
+	}
+
 	// Update is called once per frame
 	void Update () {
 		
