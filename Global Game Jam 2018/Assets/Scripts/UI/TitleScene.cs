@@ -11,16 +11,11 @@ public class TitleScene : MonoBehaviour {
 			transform.Find( "Doctor" ).gameObject,
 			transform.Find( "Despicable" ).gameObject,
 			transform.Find( "Mansion" ).gameObject,
-			transform.Find( "Maladies" ).gameObject,
-			transform.Find( "Start" ).gameObject
+			transform.Find( "Maladies" ).gameObject
 		};
 	}
 
 	void Update () {
-		timer += Time.deltaTime;
-		if (timer > 6 && Input.anyKeyDown) {
-			Application.LoadLevel( 1 );
-		}
 	}
 
 	//This is triggered from events within the TitleScreen animation

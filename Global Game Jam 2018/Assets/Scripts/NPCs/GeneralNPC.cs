@@ -10,10 +10,8 @@ public class GeneralNPC : MonoBehaviour {
 	protected Rigidbody2D body;
 	protected Player player;
 	protected Spawner spawner;
-	AudioSource audioSource;
 
 	protected virtual void Start () {
-		audioSource = GetComponent<AudioSource>();
 		animator = GetComponent<Animator>();
 		body = GetComponent<Rigidbody2D>();
 		player = FindObjectOfType<Player>();

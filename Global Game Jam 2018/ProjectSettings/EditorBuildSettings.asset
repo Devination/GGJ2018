@@ -9,5 +9,8 @@ EditorBuildSettings:
     path: Assets/Levels/TitleScene.unity
     guid: 28f5094917805004abe9cda07b12ea07
   - enabled: 1
-    path: Assets/Levels/dc_test.unity
-    guid: 00000000000000000000000000000000
+    path: Assets/Levels/TutorialScene.unity
+    guid: 74a7d675b6dc7bc4fbf220aec67fadaf
+  - enabled: 1
+    path: Assets/Levels/Mansion.unity
+    guid: 7e8639e7a60013b4e8ef149485051a15
